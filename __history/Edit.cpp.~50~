@@ -1,0 +1,93 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Edit.h"
+#include "dm.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFEdit *FEdit;
+//---------------------------------------------------------------------------
+__fastcall TFEdit::TFEdit(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEdit::SpeedButton3Click(TObject *Sender)
+{
+	AnsiString s;
+	s="UPDATE PRODUS SET DENUMIRE=:DENUMIRE,COD_PRODUS=:COD_PRODUS,AUTOR=:AUTOR,";
+	s+="EDITURA=:EDITURA,COLECTIA=:COLECTIA,AN_APARITIE=:AN_APARITIE,NR_PAG=:NR_PAG,";
+	s+="LIMBA=:LIMBA WHERE COD_PRODUS=:COD_PRODUS";
+
+	DataModule1->QLiber->Close();
+	DataModule1->QLiber->SQL->Clear();
+	DataModule1->QLiber->SQL->Add(s);
+
+	DataModule1->QLiber->ParamByName("COD_PRODUS")->AsInteger = Edit2->Text.ToInt();
+	DataModule1->QLiber->ParamByName("DENUMIRE")->AsString = Edit3->Text;
+	DataModule1->QLiber->ParamByName("AUTOR")->AsString = Edit4->Text;
+	DataModule1->QLiber->ParamByName("EDITURA")->AsString = Edit5->Text;
+	DataModule1->QLiber->ParamByName("COLECTIA")->AsString = Edit6->Text;
+	DataModule1->QLiber->ParamByName("AN_APARITIE")->AsInteger = Edit7->Text.ToInt();
+	DataModule1->QLiber->ParamByName("NR_PAG")->AsInteger = Edit8->Text.ToInt();
+	DataModule1->QLiber->ParamByName("LIMBA")->AsString = Edit9->Text;
+    DataModule1->QLiber->ExecSQL();
+
+	ShowMessage("Produsul a fost editat cu succes!");
+
+	Edit1->Text = " ";
+	Edit2->Text = " ";
+	Edit3->Text = " ";
+	Edit4->Text = " ";
+	Edit5->Text = " ";
+	Edit6->Text = " ";
+	Edit7->Text = " ";
+	Edit8->Text = " ";
+	Edit9->Text = " ";
+	Panel1->Enabled = true;
+	Panel2->Visible = false;
+    Panel3->Visible = false;
+
+    FEdit->Close();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFEdit::Image2Click(TObject *Sender)
+{
+	if(Edit1->Text.IsEmpty()) ShowMessage("Introduceti codul produsului");
+	else
+	{
+        Panel1->Enabled = false;
+		Panel2->Visible = true;
+        Panel3->Visible = true;
+	}
+
+	DataModule1->QCautare->Close();
+	DataModule1->QCautare->SQL->Clear();
+	DataModule1->QCautare->SQL->Add("SELECT * FROM PRODUS WHERE COD_PRODUS=:COD_PRODUS");
+	DataModule1->QCautare->ParamByName("COD_PRODUS")->AsInteger = Edit1->Text.ToInt();
+	DataModule1->QCautare->Open();
+
+	Edit2->Text = DataModule1->QCautare->FieldByName("COD_PRODUS")->AsInteger;
+	Edit3->Text = DataModule1->QCautare->FieldByName("DENUMIRE")->AsString;
+	Edit4->Text = DataModule1->QCautare->FieldByName("AUTOR")->AsString;
+	Edit5->Text = DataModule1->QCautare->FieldByName("EDITURA")->AsString;
+	Edit6->Text = DataModule1->QCautare->FieldByName("COLECTIA")->AsString;
+	Edit7->Text = DataModule1->QCautare->FieldByName("AN_APARITIE")->AsInteger;
+    Edit8->Text = DataModule1->QCautare->FieldByName("NR_PAG")->AsInteger;
+	Edit9->Text = DataModule1->QCautare->FieldByName("Limba")->AsString;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEdit::SpeedButton4Click(TObject *Sender)
+{
+	FEdit->Close();
+    //Sters informatia
+}
+//---------------------------------------------------------------------------
+

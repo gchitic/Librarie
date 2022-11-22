@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/06/29 14:26:42.000.979,=C:\Users\Asus\OneDrive\Documente\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2022/06/29 14:26:43.000.016,=C:\Users\Asus\OneDrive\Documente\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2022/06/29 14:27:22.000.271,C:\Users\Asus\OneDrive\Documente\Embarcadero\Studio\Projects\Unit1.cpp=D:\IT\!Diploma\!Proiectul\Main.cpp</Transaction>
+    <Transaction>2022/06/29 14:27:22.000.271,C:\Users\Asus\OneDrive\Documente\Embarcadero\Studio\Projects\Unit1.h=D:\IT\!Diploma\!Proiectul\Main.h</Transaction>
+    <Transaction>2022/06/29 14:27:22.000.271,C:\Users\Asus\OneDrive\Documente\Embarcadero\Studio\Projects\Unit1.dfm=D:\IT\!Diploma\!Proiectul\Main.dfm</Transaction>
+    <Transaction>2022/06/29 14:27:55.000.529,C:\Users\Asus\OneDrive\Documente\Embarcadero\Studio\Projects\Project1PCH1.h=D:\IT\!Diploma\!Proiectul\Project1PCH1.h</Transaction>
+    <Transaction>2022/06/29 14:27:58.000.280,C:\Users\Asus\OneDrive\Documente\Embarcadero\Studio\Projects\Project1.cbproj=D:\IT\!Diploma\!Proiectul\Project1.cbproj</Transaction>
+    <Transaction>2022/07/01 12:42:47.000.226,=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/01 12:48:09.000.572,=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/01 12:48:38.000.382,=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/01 12:48:53.000.579,D:\IT\!Diploma\!Proiectul\dm.dfm=D:\IT\!Diploma\!Proiectul\Unit1.dfm</Transaction>
+    <Transaction>2022/07/01 12:48:53.000.579,D:\IT\!Diploma\!Proiectul\dm.cpp=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/01 12:48:53.000.579,D:\IT\!Diploma\!Proiectul\dm.h=D:\IT\!Diploma\!Proiectul\Unit1.h</Transaction>
+    <Transaction>2022/07/01 13:20:08.000.043,=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/01 13:34:16.000.450,D:\IT\!Diploma\!Proiectul\Product.h=D:\IT\!Diploma\!Proiectul\Unit1.h</Transaction>
+    <Transaction>2022/07/01 13:34:16.000.450,D:\IT\!Diploma\!Proiectul\Product.dfm=D:\IT\!Diploma\!Proiectul\Unit1.dfm</Transaction>
+    <Transaction>2022/07/01 13:34:16.000.450,D:\IT\!Diploma\!Proiectul\Product.cpp=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/01 13:41:19.000.815,=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/01 13:43:09.000.831,D:\IT\!Diploma\!Proiectul\Cautare.dfm=D:\IT\!Diploma\!Proiectul\Unit1.dfm</Transaction>
+    <Transaction>2022/07/01 13:43:09.000.831,D:\IT\!Diploma\!Proiectul\Cautare.cpp=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/01 13:43:09.000.831,D:\IT\!Diploma\!Proiectul\Cautare.h=D:\IT\!Diploma\!Proiectul\Unit1.h</Transaction>
+    <Transaction>2022/07/05 10:48:24.000.780,=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/05 10:51:28.000.385,D:\IT\!Diploma\!Proiectul\Edit.dfm=D:\IT\!Diploma\!Proiectul\Unit1.dfm</Transaction>
+    <Transaction>2022/07/05 10:51:28.000.385,D:\IT\!Diploma\!Proiectul\Edit.cpp=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/05 10:51:28.000.385,D:\IT\!Diploma\!Proiectul\Edit.h=D:\IT\!Diploma\!Proiectul\Unit1.h</Transaction>
+    <Transaction>2022/07/07 10:10:26.000.297,=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/07 10:10:52.000.348,D:\IT\!Diploma\!Proiectul\Receptie.dfm=D:\IT\!Diploma\!Proiectul\Unit1.dfm</Transaction>
+    <Transaction>2022/07/07 10:10:52.000.348,D:\IT\!Diploma\!Proiectul\Receptie.h=D:\IT\!Diploma\!Proiectul\Unit1.h</Transaction>
+    <Transaction>2022/07/07 10:10:52.000.348,D:\IT\!Diploma\!Proiectul\Receptie.cpp=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/11 10:22:47.000.737,=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/11 10:24:30.000.089,D:\IT\!Diploma\!Proiectul\Inregistrare.cpp=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/11 10:24:30.000.089,D:\IT\!Diploma\!Proiectul\Inregistrare.h=D:\IT\!Diploma\!Proiectul\Unit1.h</Transaction>
+    <Transaction>2022/07/11 10:24:30.000.089,D:\IT\!Diploma\!Proiectul\Inregistrare.dfm=D:\IT\!Diploma\!Proiectul\Unit1.dfm</Transaction>
+    <Transaction>2022/07/18 12:28:53.000.290,=D:\IT\!Diploma\!Proiectul\Unit1.pas</Transaction>
+    <Transaction>2022/07/18 12:31:24.000.586,D:\IT\!Diploma\!Proiectul\ReceptieCautare.dfm=D:\IT\!Diploma\!Proiectul\Unit1.dfm</Transaction>
+    <Transaction>2022/07/18 12:31:24.000.586,D:\IT\!Diploma\!Proiectul\ReceptieCautare.pas=D:\IT\!Diploma\!Proiectul\Unit1.pas</Transaction>
+    <Transaction>2022/07/18 12:45:16.000.637,=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+    <Transaction>2022/07/18 12:47:34.000.489,D:\IT\!Diploma\!Proiectul\ReceptCautare.h=D:\IT\!Diploma\!Proiectul\Unit1.h</Transaction>
+    <Transaction>2022/07/18 12:47:34.000.489,D:\IT\!Diploma\!Proiectul\ReceptCautare.dfm=D:\IT\!Diploma\!Proiectul\Unit1.dfm</Transaction>
+    <Transaction>2022/07/18 12:47:34.000.489,D:\IT\!Diploma\!Proiectul\ReceptCautare.cpp=D:\IT\!Diploma\!Proiectul\Unit1.cpp</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,13 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 416
+  Width = 731
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Server=DESKTOP-NOPFO5O'
+      'Database=MAGAZIN'
+      'DriverID=MySQL')
+    Left = 480
+    Top = 160
+  end
+end

@@ -1,0 +1,111 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Cautare.h"
+#include "dm.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFCautare *FCautare;
+//---------------------------------------------------------------------------
+__fastcall TFCautare::TFCautare(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TFCautare::RadioButton1Click(TObject *Sender)
+{
+    Edit2->Text = " ";
+	Edit2->TextHint = "Denumire";
+}
+//---------------------------------------------------------------------------
+void __fastcall TFCautare::RadioButton2Click(TObject *Sender)
+{
+	Edit2->Text = " ";
+	Edit2->TextHint = "Cod produs";
+}
+//---------------------------------------------------------------------------
+void __fastcall TFCautare::RadioButton3Click(TObject *Sender)
+{
+	Edit2->Text = " ";
+    Edit2->TextHint = "Autor";
+}
+//---------------------------------------------------------------------------
+void __fastcall TFCautare::RadioButton4Click(TObject *Sender)
+{
+	Edit2->Text = " ";
+    Edit2->TextHint = "Editura";
+}
+//---------------------------------------------------------------------------
+void __fastcall TFCautare::RadioButton5Click(TObject *Sender)
+{
+	Edit2->Text = " ";
+    Edit2->TextHint = "Anul aparitiei";
+}
+//---------------------------------------------------------------------------
+void __fastcall TFCautare::FormShow(TObject *Sender)
+{
+    DataModule1->QCautare->Open();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFCautare::Image1Click(TObject *Sender)
+{
+	if(Edit2!=" ")
+	{
+        if(RadioButton1->Checked)
+		{
+			DataModule1->QCautare->Close();
+			DataModule1->QCautare->SQL->Clear();
+			DataModule1->QCautare->SQL->Add("SELECT * FROM PRODUS WHERE DENUMIRE=:DENUMIRE");
+			DataModule1->QCautare->ParamByName("DENUMIRE")->AsString = Edit2->Text;
+			DataModule1->QCautare->Open();
+		}
+		else if(RadioButton2->Checked)
+		{
+			DataModule1->QCautare->Close();
+			DataModule1->QCautare->SQL->Clear();
+			DataModule1->QCautare->SQL->Add("SELECT * FROM PRODUS WHERE COD_PRODUS=:COD_PRODUS");
+			DataModule1->QCautare->ParamByName("COD_PRODUS")->AsInteger = Edit2->Text.ToInt();
+			DataModule1->QCautare->Open();
+		}
+		else if(RadioButton3->Checked)
+		{
+			DataModule1->QCautare->Close();
+			DataModule1->QCautare->SQL->Clear();
+			DataModule1->QCautare->SQL->Add("SELECT * FROM PRODUS WHERE AUTOR=:AUTOR");
+			DataModule1->QCautare->ParamByName("AUTOR")->AsString = Edit2->Text;
+			DataModule1->QCautare->Open();
+		}
+		else if(RadioButton4->Checked)
+		{
+			DataModule1->QCautare->Close();
+			DataModule1->QCautare->SQL->Clear();
+			DataModule1->QCautare->SQL->Add("SELECT * FROM PRODUS WHERE EDITURA=:EDITURA");
+			DataModule1->QCautare->ParamByName("EDITURA")->AsString = Edit2->Text;
+			DataModule1->QCautare->Open();
+		}
+		else
+		{
+			DataModule1->QCautare->Close();
+			DataModule1->QCautare->SQL->Clear();
+			DataModule1->QCautare->SQL->Add("SELECT * FROM PRODUS WHERE AN_APARITIE=:AN_APARITIE");
+			DataModule1->QCautare->ParamByName("AN_APARITIE")->AsInteger = Edit2->Text.ToInt();
+			DataModule1->QCautare->Open();
+		}
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFCautare::RadioButton6Click(TObject *Sender)
+{
+	Edit2->Text = " ";
+	DataModule1->QCautare->Close();
+	DataModule1->QCautare->SQL->Clear();
+	DataModule1->QCautare->SQL->Add("SELECT * FROM PRODUS");
+	DataModule1->QCautare->Open();
+}
+//---------------------------------------------------------------------------
+

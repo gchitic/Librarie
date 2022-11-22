@@ -1,0 +1,16 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 416
+  Width = 731
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=MAGAZIN'
+      'Server=DESKTOP-NOPFO5O'
+      'OSAuthent=Yes'
+      'DriverID=MSSQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 288
+    Top = 160
+  end
+end

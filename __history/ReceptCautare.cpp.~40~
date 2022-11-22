@@ -1,0 +1,101 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "ReceptCautare.h"
+#include "dm.h"
+#include "Receptie.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFReceptCautare *FReceptCautare;
+//---------------------------------------------------------------------------
+__fastcall TFReceptCautare::TFReceptCautare(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TFReceptCautare::Image1Click(TObject *Sender)
+{
+    if(Edit2!=" ")
+	{
+        if(RadioButton1->Checked)
+		{
+			DataModule1->QCautare->Close();
+			DataModule1->QCautare->SQL->Clear();
+			DataModule1->QCautare->SQL->Add("SELECT * FROM PRODUS WHERE DENUMIRE=:DENUMIRE");
+			DataModule1->QCautare->ParamByName("DENUMIRE")->AsString = Edit2->Text;
+			DataModule1->QCautare->Open();
+		}
+		else if(RadioButton2->Checked)
+		{
+			DataModule1->QCautare->Close();
+			DataModule1->QCautare->SQL->Clear();
+			DataModule1->QCautare->SQL->Add("SELECT * FROM PRODUS WHERE COD_PRODUS=:COD_PRODUS");
+			DataModule1->QCautare->ParamByName("COD_PRODUS")->AsInteger = Edit2->Text.ToInt();
+			DataModule1->QCautare->Open();
+		}
+	}
+	else ShowMessage("Completati campurile");
+}
+//---------------------------------------------------------------------------
+void __fastcall TFReceptCautare::RadioButton2Click(TObject *Sender)
+{
+	Edit2->Text="";
+	Edit2->TextHint="Cod produs";
+}
+//---------------------------------------------------------------------------
+void __fastcall TFReceptCautare::RadioButton1Click(TObject *Sender)
+{
+    Edit2->Text="";
+	Edit2->TextHint="Denumire";
+}
+//---------------------------------------------------------------------------
+void __fastcall TFReceptCautare::SpeedButton2Click(TObject *Sender)
+{
+	Edit2->Text = "";
+    FReceptCautare->Close();
+}
+//---------------------------------------------------------------------------
+void __fastcall TFReceptCautare::SpeedButton1Click(TObject *Sender)
+{
+	AnsiString denumire,autor;
+	denumire = DataModule1->QCautare->FieldByName("DENUMIRE")->AsString;
+	autor = DataModule1->QCautare->FieldByName("AUTOR")->AsString;
+	FReceptie->Edit4->Text = denumire + " de " + autor;
+	FReceptCautare->Close();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFReceptCautare::Edit2Change(TObject *Sender)
+{
+	AnsiString s;
+	if(Edit2->Text!="")
+	{
+		s="SELECT * FROM PRODUS WHERE ";
+		if(RadioButton2->Checked) //cod produs
+		{
+			s+="COD_PRODUS LIKE'" +Edit2->Text+ "%' ";
+		}
+		else if(RadioButton1->Checked)	//denumire
+		{
+			s+="DENUMIRE LIKE '" +Edit2->Text+ "%' ";
+		}
+		else
+		{
+            s+="AUTOR LIKE '" +Edit2->Text+ "%' ";
+		}
+		s+=" ORDER BY DENUMIRE";
+		DataModule1->QProdus->Close();
+		DataModule1->QProdus->SQL->Clear();
+		DataModule1->QProdus->SQL->Add(s);
+		DataModule1->QProdus->Open();
+	}
+	else
+	{
+        DataModule1->QProdus->Close();
+    }
+}
+//---------------------------------------------------------------------------
+
